@@ -4,9 +4,9 @@ on: push
 
 jobs:
     ubuntu:
-    runs-on: ubuntu-latest
-    steps:
-    - run: date
+        runs-on: ubuntu-latest
+        steps:
+        - run: date
     windows:
       runs-on: windows-latest
       steps:
@@ -16,7 +16,7 @@ jobs:
       steps:
       - run: date
     depends:
-      needs: [job1, job2, job3]
+      needs: [ubuntu, windows, macos]
       runs-on: ubuntu-latest
       steps:
       - run: echo "All jobs done"
